@@ -1,14 +1,15 @@
-"use strict"
+"use strict";
 
-const express = require("express")
-const app = express()
-app.use(express.json())
+const express = require("express");
+const app = express();
+app.use(express.json());
 
-require('dotenv').config()
-require('./src/configs/dbConnection')
+require("dotenv").config();
+require("./src/configs/dbConnection");
 
+const PORT = process.env.PORT;
+const HOST = process.env.HOST;
 
-const PORT = process.env.PORT
-const HOST = process.env.HOST
-
-app.listen(PORT, () => console.log(` Server Running on http://${HOST}:${PORT}`))
+app.listen(PORT, () =>
+  console.log(` Server Running on http://${HOST}:${PORT}`)
+);
